@@ -1,0 +1,181 @@
+@font-face {
+  font-family: "Digital";
+  src: url("https://db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
+  src: url("https://db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix") format("embedded-opentype"),
+   url("https://db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2") format("woff2"), 
+   url("https://db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff") format("woff"), 
+   url("https://db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf") format("truetype"), 
+   url("https://db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7") format("svg");
+}
+
+/* latin */
+@font-face {
+  font-family: "Share Tech Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: local('Share Tech Mono'), local('ShareTechMono-Regular'), 
+  	url(https://fonts.gstatic.com/s/sharetechmono/v8/J7aHnp1uDWRBEqV98dVQztYldFcLowEF.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #D3CCE3;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.screen{
+	padding: 10px;
+    color: #FFEB3B;
+    background: #272727;
+    font-family: Digital;
+}
+.formulaScreen, #display{
+	line-height: 1em;
+	min-height: 1em;
+	text-align: right;
+}
+.formulaScreen{
+	overflow-wrap: break-word;
+    word-wrap: break-word;
+    font-size: 20px;
+}
+#display{
+	color: #ffc107;
+	font-size: 26px;
+}
+
+.calculator {
+	  cursor: default;
+    border: 2px solid #47476b;
+    padding: 5px;
+    background: #0000001f;
+    width: 25%;
+    position: relative;
+    min-width: 280px;
+}
+.container {
+	height: 50vh;
+    display: grid;
+    grid-template-columns: [first] 25% [second] 25% [third] 25% [fourth] 25% [fifth];
+    grid-template-rows: [first_r] 20% [second_r] 20% [third_r] 20% [fourth_r] 20% [fifth_r] 20% [sixth_r];
+}
+
+.button {
+	transition: background-color 0.2s;
+	display: flex;
+	justify-content: center;
+  align-items: center;
+	background: #666666;
+	color: #fff;
+	font-size: 20px;
+	font-family: "Share Tech Mono";
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.button:hover{
+	background: #777;
+}
+
+#zero{
+	grid-column: first / third;
+  	grid-row: fifth_r / sixth_r;
+}
+
+#one{
+	grid-column: first / second;
+  	grid-row: fourth_r / fifth_r;
+}
+
+#two{
+	grid-column: second / third;
+  	grid-row: fourth_r / fifth_r;
+}
+
+#three{
+	grid-column: third / fourth;
+  	grid-row: fourth_r / fifth_r;
+}
+
+#six{
+	grid-column: third / fourth;
+  	grid-row: third_r / fourth_r;
+}
+
+#five{
+	grid-column: second / third;
+  	grid-row: third_r / fourth_r;
+}
+
+#four{
+	grid-column: first / second;
+  	grid-row: third_r / fourth_r;
+}
+
+#seven{
+	grid-column: first / second;
+  	grid-row: second_r / third_r;
+}
+
+#nine{
+	grid-column: third / fourth;
+  	grid-row:  second_r / third_r;
+}
+
+#eight{
+	grid-column: second / third;
+  	grid-row: second_r / third_r;
+}
+
+#decimal{
+	grid-column: third / fourth;
+  	grid-row: fifth_r / sixth_r;
+}
+#equals{
+	background: #0e68b7;
+	grid-column: fourth / fifth;
+  	grid-row: fourth_r / sixth_r;
+}
+
+#equals:hover{
+	background: #2e79bb;
+}
+
+#add{
+	grid-column: fourth / fifth;
+  	grid-row: third_r / fourth_r;
+}
+
+#subtract{
+	grid-column: fourth / fifth;
+  	grid-row: second_r / third_r;
+}
+
+#multiply{
+	grid-column: fourth / fifth;
+  	grid-row: first_r / second_r;
+}
+
+#divide{
+	grid-column: third / fourth;
+  	grid-row: first_r / second_r;
+}
+
+#clear{
+	background: #b3382f;
+	grid-column: first / third;
+  	grid-row: first_r / second_r;
+}
+
+#clear:hover{
+	background: #c54036;
+}
